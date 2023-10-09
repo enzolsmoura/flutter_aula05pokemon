@@ -18,15 +18,22 @@ class _SecondPageState extends State<SecondPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-              "Nome: ${widget.name}\nTipo: ${widget.type} \nURL: ${widget.url}"),
-          BotaoWidget(
-            funcao: () {
-              Navigator.pop(
-                context,
-              );
-            },
-            texto: 'Voltar',
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              "Nome: ${widget.name}\nTipo: ${widget.type} \nURL: ${widget.url}", 
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15, wordSpacing: 1.5, height: 2)),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: BotaoWidget(
+              funcao: () {
+                Navigator.pop(
+                  context,
+                );
+              },
+              texto: 'Voltar',
+            )
           )
         ],
       ),

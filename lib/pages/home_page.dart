@@ -32,7 +32,8 @@ class _HomePageState extends State<HomePage> {
           texto: "Requisição Pokémon",
           funcao: () async {
             int num = Random().nextInt(1017);
-            var url = Uri.parse("https://pokeapi.co/api/v2/pokemon/${num}");
+            String link = "https://pokeapi.co/api/v2/pokemon/";
+            var url = Uri.parse("$link${num}");
             var response = await http.get(url);
             var data = jsonDecode(response.body);
             name = data["species"]["name"];
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                     builder: (context) => SecondPage(
                           name: name,
                           type: type,
-                          url: url.toString(),
+                          url: ("$link$name"),
                         )));
           }),
     ])));
